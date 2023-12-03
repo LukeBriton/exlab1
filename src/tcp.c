@@ -31,7 +31,7 @@ int tcp() {
   bind(socketServer, (SOCKADDR*)&addrServer, sizeof(SOCKADDR));
   
   if(listen(socketServer, BACKLOG_LENGTH) == 0) {
-    printf("[Info] Start to listen 0.0.0.0:80\r\n");
+    printf("[Info] Start to listen 0.0.0.0:80\r\n");//netstat -ano -> XAMPP Apache Service is listening to Port 80
     signal(SIGINT, sig_handler);
     while(1) {
       socketClient = accept(socketServer, (SOCKADDR*)&addrClient, &addrlen);
